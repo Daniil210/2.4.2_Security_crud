@@ -17,6 +17,9 @@
     <label for="email">Email</label>
     <input type="text" th:field="*{email}" id="email" placeholder="Email">
     <br/>
+    <label for="password">password</label>
+    <input type="text" th:field="*{password}" id="password" placeholder="password">
+    <br/>
     <label for="roles">Enter role:  </label>
     <input type="checkbox" th:field="*{roles}" th:text="ADMIN" th:value="'ROLE_ADMIN'"/>
     <input type="checkbox" th:field="*{roles}" th:text="USER" th:value="'ROLE_USER'"/>

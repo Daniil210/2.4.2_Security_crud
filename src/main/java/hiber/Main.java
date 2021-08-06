@@ -18,8 +18,8 @@ public class Main {
         UserService userService = context.getBean(UserService.class);
 
 
-        User user1 = new User("naaasos", "laaaas", "eaaaas");
-        User user2 = new User("aaa", "aaa", "aaa");
+        User user1 = new User("naaasos", "laaaas", "eaaaas", "pp");
+        User user2 = new User("aaa", "aaa", "aaa","pp");
         Role role1 = new Role("ROLE_ADMIN");
         Role role2 = new Role("ROLE_USERR");
 
