@@ -1,6 +1,8 @@
 package hiber.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -16,12 +18,15 @@ public class User {
    @Column(name = "last_name")
    private String lastName;
 
-   @Column(name = "email")
+   @Column(name = "email", unique = true)
    private String email;
 
+   @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   private Set<Role> roles = new HashSet<>();
+
    public User() {}
-   
-   public User(String firstName, String lastName, String email) {
+
+   public User( String firstName, String lastName, String email) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.email = email;
@@ -59,9 +64,17 @@ public class User {
       this.email = email;
    }
 
+   public Set<Role> getRoles() {
+      return roles;
+   }
+
+   public void setRoles(Set<Role> roles) {
+      this.roles = roles;
+   }
+
    @Override
    public String toString() {
-      return "User {" +
+      return "User{" +
               "id=" + id +
               ", firstName='" + firstName + '\'' +
               ", lastName='" + lastName + '\'' +

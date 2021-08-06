@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CRUDmy_2.3.1" />
+        <module name="2.3.1_CRUDmyCopy" />
         <module name="Null" />
         <module name="CRUDmy" />
         <module name="2.3.1_CRUDmy" />
