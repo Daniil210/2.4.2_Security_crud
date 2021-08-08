@@ -1,27 +1,23 @@
-package hiber;
-
 import hiber.config.AppConfig;
+import hiber.dao.UserDao;
 import hiber.model.Role;
 import hiber.model.User;
-import hiber.service.UserService;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.HashSet;
-import java.util.Set;
+public class AllTest {
 
-public class Main {
-
-    public static void main(String[] args) {
-
+    @Test
+    public void Testing() {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
-        UserService userService = context.getBean(UserService.class);
+        UserDao userService = context.getBean(UserDao.class);
 
 
-        User user1 = new User("naaasos", "laaaas", "eaaaas", "pp");
+        /*User user1 = new User("naaasos", "laaaas", "eaaaas", "pp");
         User user2 = new User("aaa", "aaa", "aaa","pp");
         Role role1 = new Role("ROLE_ADMIN");
-        Role role2 = new Role("ROLE_USERR");
+        Role role2 = new Role("ROLE_USERR");*/
 
         //user1.getRoles().add(role2);
         //user1.setId(1l);
@@ -30,7 +26,7 @@ public class Main {
         //userService.createUser(user2);
         //userService.updateUser(user1);
 
-        System.out.println(userService.getUser(1l).getRoles());
+        System.out.println(userService.getUserByEmail("memtt@pozvonim.com"));
         //userService.deleteUserById(user1);
     }
 }

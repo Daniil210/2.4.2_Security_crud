@@ -30,17 +30,11 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
+//@ComponentScan(value = "hiber")
 public class AppConfig {
 
    @Autowired
    private Environment env;
-
-   private final ApplicationContext applicationContext;
-
-   public AppConfig(ApplicationContext applicationContext) {
-      this.applicationContext = applicationContext;
-   }
 
    @Bean
    public DataSource getDataSource() {

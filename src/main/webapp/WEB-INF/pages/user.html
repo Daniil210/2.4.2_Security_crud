@@ -17,6 +17,7 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Email</th>
+                <th>Password</th>
                 <th>Roles</th>
             </tr>
             </thead>
@@ -36,5 +37,11 @@
     </div>
     <p><a href="/admin/user-create">Create user</a></p>
 </div>
+
+<br>
+<form th:action="@{/logout}">
+    <input type="submit" value="LOGOUT"/>
+</form>
+
 </body>
 </html>

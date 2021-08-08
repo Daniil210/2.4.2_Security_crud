@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="CRUDmy_2.3.1" />
         <module name="2.3.1_CRUDmyCopy" />
+        <module name="2.4.2_Security_crud" />
         <module name="Null" />
         <module name="CRUDmy" />
         <module name="2.3.1_CRUDmy" />

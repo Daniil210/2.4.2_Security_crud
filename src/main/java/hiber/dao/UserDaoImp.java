@@ -46,4 +46,11 @@ public class UserDaoImp implements UserDao {
       return em.find(User.class, id);
    }
 
+   @Override
+   @SuppressWarnings("unchecked")
+   public User getUserByEmail(String email) {
+      return em.createQuery("SELECT user FROM User user WHERE user.email=:email", User.class).setParameter("email", email).getSingleResult();
+   }
+
+
 }

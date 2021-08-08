@@ -1,4 +1,3 @@
-/*
 package hiber.config;
 
 import hiber.config.handler.SuccessUserHandler;
@@ -34,7 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // http.csrf().disable(); - попробуйте выяснить сами, что это даёт
         http.authorizeRequests()
                 .antMatchers("/").permitAll() // доступность всем
-                .antMatchers("/user").access("hasAnyRole('ROLE_USER')") // разрешаем входить на /user пользователям с ролью User
+                .antMatchers("/one_user/**").access("hasAnyRole('USER', 'ADMIN')") // разрешаем входить на /user пользователям с ролью User
+                .antMatchers("/admin/**").access("hasAnyRole('ADMIN')")
                 .and().formLogin()  // Spring сам подставит свою логин форму
                 .successHandler(successUserHandler); // подключаем наш SuccessHandler для перенеправления по ролям
     }
@@ -46,4 +46,3 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
     }
 }
-*/
